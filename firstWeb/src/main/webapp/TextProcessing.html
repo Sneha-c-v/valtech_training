@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Processing</title>
+</head>
+<body>
+    <h1>Text Processing</h1>
+    
+    <form id="textForm">
+        <label for="paragraph">Enter a paragraph:</label><br>
+        <textarea id="paragraph" rows="10" cols="50"></textarea><br>
+        <input type="button" value="Process Text" onclick="processText()">
+    </form>
+    
+    <div id="result" style="display:none;">
+        <h2>Processing Results</h2>
+        <p><strong>Processed Text:</strong></p>
+        <p id="processedText"></p>
+        <p><strong>Remaining Word Counts:</strong></p>
+        <div id="wordCounts"></div>
+       
+    </div>
+    
+    <script>
+        function processText() {
+            // Step 1: Get the paragraph from the form
+            var paragraph = document.getElementById("paragraph").value;
+            
+            // Step 2: Create a set of common words
+            var commonWords = new Set();
+            commonWords.add("is");
+            commonWords.add("as");
+            commonWords.add("if");
+            commonWords.add("and");
+            commonWords.add("the");
+            commonWords.add("on");
+	        commonWords.add("into");
+	        commonWords.add("does");
+	        commonWords.add("to");
+	        commonWords.add("for");
+	        commonWords.add("of");
+	        commonWords.add(",");
+	           commonWords.add("in");
+	           commonWords.add("an");
+	        
+	        commonWords.add("as");
+            // Add more common words as needed...
+ 
+            // Step 4: Tokenize the paragraph into words and remove punctuation
+            var words = paragraph.split(/\s+/);
+            for (var i = 0; i < words.length; i++) {
+                words[i] = words[i].replace(/[^a-zA-Z]/g, ''); // Remove non-alphabet characters
+            }
+ 
+            // Step 5: Remove common words and count the remaining words
+            var wordCountMap = new Map();
+            for (var i = 0; i < words.length; i++) {
+                var word = words[i].toLowerCase();
+                if (!commonWords.has(word)) {
+                    // Update the word count map
+                    wordCountMap.set(word, (wordCountMap.get(word) || 0) + 1);
+                }
+            }
+ 
+            // Step 6: Display the processed text and remaining word counts
+            document.getElementById("processedText").textContent = paragraph;
+ 
+            var wordCountsDiv = document.getElementById("wordCounts");
+            wordCountsDiv.innerHTML = '';
+            wordCountMap.forEach(function(count, word) {
+                var p = document.createElement("p");
+                p.textContent = word + ": " + count;
+                wordCountsDiv.appendChild(p);
+            });
+ 
+            // Show the results
+            document.getElementById("result").style.display = "block";
+        }
+    </script>
+</body>
+</html>
