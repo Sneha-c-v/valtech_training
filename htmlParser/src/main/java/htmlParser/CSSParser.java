@@ -2,6 +2,7 @@ package htmlParser;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -59,5 +60,9 @@ public class CSSParser {
 	        int blue = colorValue & 0xFF;
 	        return "rgb(" + red + "," + green + "," + blue + ")";
 	    }
+		public static List<String> parseCss(String malformedCssContent) {
+			// TODO Auto-generated method stub
+			return null;
+		}
 
 }

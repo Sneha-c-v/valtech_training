@@ -10,9 +10,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class HtmlParser {
-    public static List<String> parseHtml(InputStream input) throws IOException {
+    public static List<String> parseHtml(InputStream htmlContent) throws IOException {
         List<String> result = new ArrayList<>();
-        BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+        BufferedReader reader = new BufferedReader(new InputStreamReader(htmlContent));
 
         String line;
         int lineCount = 0;
@@ -42,4 +42,9 @@ public class HtmlParser {
 
         return result;
     }
+
+	public static List<String> parseHtml(String htmlContent) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
