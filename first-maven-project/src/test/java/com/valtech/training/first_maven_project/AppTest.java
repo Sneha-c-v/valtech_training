@@ -31,6 +31,12 @@ public class AppTest
     /**
      * Rigourous Test :-)
      */
+    
+    
+    public void testSayHello() {
+    	App app=new App();
+    	assertEquals("Hello World",app.sayHello());
+    }
     public void testApp()
     {
         assertTrue( true );
