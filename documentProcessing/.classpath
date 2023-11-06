@@ -9,5 +9,6 @@
 			<attribute name="javadoc_location" value="https://docs.oracle.com/javaee/7/api/"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
