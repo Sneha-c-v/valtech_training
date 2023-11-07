@@ -2,7 +2,7 @@ package com.valtech.training.spring;
  
 public class Simpleinterestimpl implements Simpleinterest {
  
-	private Arithmetic1 arithmetic;
+	private Arithmetic arithmetic;
 	
 	
 	public Simpleinterestimpl() {
@@ -10,11 +10,11 @@ public class Simpleinterestimpl implements Simpleinterest {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Simpleinterestimpl(Arithmetic1 arithmetic) {
+	public Simpleinterestimpl(Arithmetic arithmetic) {
 		this.arithmetic=arithmetic;
 	}
  
-	public void setArithmetic(Arithmetic1 arithmetic) {
+	public void setArithmetic(Arithmetic arithmetic) {
 		this.arithmetic = arithmetic;
 	}
  
@@ -32,7 +32,7 @@ public class Simpleinterestimpl implements Simpleinterest {
 	}
 	
 	public static void main(String[] args) {
-		Arithmetic1 arithmetic = new Arithmeticimpl();
+		Arithmetic arithmetic = new ArithmeticImpl();
 		Simpleinterest si = new Simpleinterestimpl(arithmetic);
 		System.out.println(si.computeInterest(200,  3, 4));
 	}

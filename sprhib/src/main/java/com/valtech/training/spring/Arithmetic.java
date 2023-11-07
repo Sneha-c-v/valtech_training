@@ -1,6 +1,6 @@
 package com.valtech.training.spring;
 
-public interface Arithmetic1 {
+public interface Arithmetic {
 	int ZERO=0;
 	int add (int a,int b);
 

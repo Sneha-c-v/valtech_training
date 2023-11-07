@@ -1,6 +1,6 @@
 package com.valtech.training.spring;
 
-public   class Arithmeticimpl implements Arithmetic1 {
+public   class ArithmeticImpl implements Arithmetic {
 
 	@Override
 	public int add(int a, int b) {
@@ -25,7 +25,7 @@ public   class Arithmeticimpl implements Arithmetic1 {
 		return a/b;
 	}
 	public static void main(String[] args) {
-		Arithmetic1 a=new Arithmeticimpl();
+		Arithmetic a=new ArithmeticImpl();
 		System.out.println(a.add(2, 3));
 		System.out.println(a.sub(2, 3));
 		System.out.println(a.mul(2, 3));

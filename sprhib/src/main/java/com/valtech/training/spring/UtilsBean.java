@@ -23,8 +23,8 @@ public class UtilsBean {
 	public void setNames(List<String> names) {
 		this.names = names;
 	}
-	public char[] getPoints() {
-		return null;
+	public Map<Point, Line> getPoints() {
+		return points;
 	}
 	public void setPoints(Map<Point, Line> points) {
 		this.points = points;

@@ -41,7 +41,7 @@
 	<p:bean id="l2" autowire="byName"
 		class="com.valtech.training.spring.Line"></p:bean>
 
-	<p:bean class="com.valtech.training.spring.Arithmeticimpl"></p:bean>
+	<p:bean class="com.valtech.training.spring.ArithmeticImpl"></p:bean>
 	<p:bean class="com.valtech.training.spring.Simpleinterestimpl"></p:bean>
 
 
@@ -66,7 +66,7 @@
 	<p:bean id="hw" name="abc,pqr"
 		class="com.valtech.training.spring.HelloWorld"></p:bean>
 
-	<p:bean id="p1" scope="prototype"
+	<p:bean id="p1" name="start" scope="prototype"
 		class="com.valtech.training.spring.Point">
 
 		<p:constructor-arg index="0" value="10"></p:constructor-arg>
