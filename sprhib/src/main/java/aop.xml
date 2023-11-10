@@ -9,15 +9,23 @@
 		</p:property>
 		<p:property name="interceptorNames">
 			<p:list>
-				<p:value>ca</p:value>
+			    
+				<p:value>counterAdvice</p:value>
+				<p:value>logReturningAdvice</p:value>
+				<p:value>exceptionHandlerAdvice</p:value>
+				<p:value>allInOneAdvice</p:value>
+				
 			</p:list>
 		</p:property>
 	</p:bean>
-	<p:bean id="ca"
-		class="com.valtech.training.spring.aop.CounterAdvice"></p:bean>
+	
 
-	<p:bean id="ca" init-method="loadCounters"
-		destroy-method="saveCouters"
-		class="com.valtech.training.spring.aop.CouterAdvice"></p:bean>
+	<p:bean id="counterAdvice" init-method="loadCounters"
+		destroy-method="saveCounters"
+		class="com.valtech.training.spring.aop.CounterAdvice"></p:bean>
+		<p:bean id="allInOneAdvice" class="com.valtech.training.spring.aop.AllInOneAdvice"></p:bean>
+		
+		<p:bean id="logReturningAdvice" class="com.valtech.training.spring.aop.LogReturningAdvice"></p:bean>
+		<p:bean id="exceptionHandlerAdvice" class="com.valtech.training.spring.aop.ExceptionHandlerAdvice"></p:bean>
 
 </p:beans>

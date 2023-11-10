@@ -18,13 +18,19 @@ public class HibernateClient {
 		cfg.addAnnotatedClass(Tx.class).addAnnotatedClass(TellerTx.class).addAnnotatedClass(ChequeTx.class)
 				.addAnnotatedClass(AtmTx.class);
 		cfg.addAnnotatedClass(Customer.class).addAnnotatedClass(Address.class).addAnnotatedClass(Account.class);
-		cfg.addAnnotatedClass(Registration.class).addAnnotatedClass(BankAccount.class);
+		cfg.addAnnotatedClass(Registration.class).addAnnotatedClass(BankAccount.class).addAnnotatedClass(OrderSummary.class);
 		SessionFactory sesFac = cfg.buildSessionFactory();
 		Session ses = sesFac.openSession();
 		Transaction tx = ses.beginTransaction();
-		ses.persist(new BankAccount(new BankAccountId("SB",1),3000));
-		BankAccountId id=new BankAccountId("SB",1);
-		BankAccount ba=(BankAccount)ses.load(BankAccount.class,id);
+		
+		ses.persist(new OrderSummary(1,2,3));
+		OrderSummary os=(OrderSummary) ses.load(OrderSummary.class, new OrderSummaryId(1,2));
+		System.out.println("Qty= "+os.getQuantity());
+		
+//		
+//		ses.persist(new BankAccount(new BankAccountId("SB",1),3000));
+//		BankAccountId id=new BankAccountId("SB",1);
+//		BankAccount ba=(BankAccount)ses.load(BankAccount.class,id);
 
 //		Customer cus = new Customer("Sneha", 22);
 //		ses.save(cus);

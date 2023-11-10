@@ -13,7 +13,7 @@ import com.valtech.training.spring.Line;
 import com.valtech.training.spring.Simpleinterest;
 import com.valtech.training.spring.UtilsBean;
 
-class iocTest {
+class IOCTest {
 	private ApplicationContext appCtx;
 	private ApplicationContext childAppCtx;
 

@@ -19,8 +19,6 @@ class AOPTest {
 		appCtx = new ClassPathXmlApplicationContext("aop.xml");
 	}
 	
-	
-	
 	@AfterEach
 	void closeall() {
 		appCtx.close();
@@ -29,8 +27,17 @@ class AOPTest {
 	void test() {
 		Arithmetic arith=(Arithmetic) appCtx.getBean(Arithmetic.class);
 		System.out.println(arith.getClass().getName());
-		System.out.println(arith);
+//		System.out.println(arith);
 		assertEquals(5, arith.add(2, 3));
+		assertEquals(0, arith.sub(2, 2));
+		try {
+			arith.div(5, 0);
+			fail("No Exception occured");
+		}catch(Exception e) {
+		}
+		}
+		
+		
 	}
 
-}
+
